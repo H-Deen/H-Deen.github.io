@@ -32,7 +32,7 @@ body {
 
 .logo{
     padding: 10px;
-    font-size: 2.1vw; 
+    font-size: 2rem; 
 }
 
 .nav_links {
@@ -43,29 +43,40 @@ body {
 .nav_links>li {
     padding: 10px;
     margin: 10px;
-    font-size: 1.5vw;
+    font-size: 1.2rem;
 }
 
 .intro{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-top: 60px;
     padding: 30px 0;
 }
 
+.intro_heading{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    margin-top: 50px;
+}
+
 .intro_container{
     margin-left: 40px;
+    width: 150%;
 }
 
 .intro_container>h2{
-    font-size: 2.5vw;
+    font-size: 2rem;
     font-weight: 300;
     padding: 10px;
 } 
 
 .intro_container> h1{
-    font-size: 3.5vw;
+    font-size: 3.5rem;
     font-weight: 600;
     padding: 10px;
 }
@@ -74,16 +85,25 @@ body {
     color: rgb(0, 195, 255);
 }
 
-.intro_container>p{
-    width: 80%;
+.intro_para{
+    margin-bottom: 75px;
+}
+
+.intro_para>p{
+    width: 50%;
     text-align: left;
-    margin-top: 20px;
-    font-size: 1.3vw;
+    font-size: 1rem;
     line-height: 30px;
+    padding-left: 45px;
+}
+
+.img_container{
+    width: 150%;
 }
 
 .img_container > img{
-    width: 95%;
+    width: 90%;
+    margin-top: 80px;
 }
 
 .projects{
@@ -92,14 +112,14 @@ body {
 }
 
 .projects> h1{
-    font-size: 3vw;
+    font-size: 2.7rem;
     text-align: center;
     padding: 55px 10px 0 10px;
 }
 
 .project_container{
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: repeat(3, 1fr);
     padding: 50px 50px;
     justify-content: center;
     gap: 20px;
@@ -133,14 +153,14 @@ body {
 }
 
 .skills>h1{
-    font-size: 3vw;
+    font-size: 2.7rem;
     text-align: center;
     padding: 100px 10px 0 10px;
 }
 
 .skill_cards{
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -149,12 +169,24 @@ body {
     margin: 100px 0;
 }
 
+.card{
+    background-color: rgb(56, 53, 53);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card>h3{
+    padding-left: 20px;
+}
+
 .footer{
     background-image: linear-gradient(to right, rgb(42 79 129) 30%, rgb(42 79 131) 50%, rgb(96, 167, 255) 100%);
 }
 
 .footer>h2{
-    font-size: 3vw;
+    font-size: 2.7rem;
     padding: 100px 0 0 85px;
 }
 
@@ -174,4 +206,108 @@ body {
 .footer_content>img{
     width: 38%;
     padding: 0px 100px 0 0;
+}
+
+@media only screen and (max-width: 1100px){
+    .home{
+        background-image: linear-gradient(70deg, rgb(46, 44, 44) 66%, rgb(53, 115, 231) 20%, rgb(21, 169, 214) 72%);
+    }
+    .intro_para{
+       margin-top: 40px;
+    }
+    .intro_para>p{
+        margin-top: 20px;
+    }
+    .project_container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .project_container>div>h2{
+        padding: 30px 0 10px 23px;
+    }
+    .card>h3{
+        padding: 0 10px 0 10px;
+    }
+    .footer>h2{
+        padding-left: 35px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .home{
+        background-image: linear-gradient(70deg, rgb(46, 44, 44) 70%, rgb(53, 115, 231) 20%, rgb(21, 169, 214) 72%);
+    }
+    .logo{
+        font-size: 1.4rem;
+    }
+    .nav_links>li{
+        font-size: 0.8rem;
+        margin: 0;
+    }
+    .intro{
+        margin-top: 0;
+    }
+    .intro_heading{
+        margin: 0;
+        padding: 0;
+    }
+    .intro_container>h2{
+        font-size: 1.4rem;
+    }
+    .intro_container>h1{
+        font-size: 1.5rem;
+        padding: 5px;
+    }
+    .img_container>img{
+        width: 100%;
+    }
+    .intro_para{
+        margin: 0;
+    }
+    .intro_para>p{
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+        text-align: center;
+        width: 90%;
+    }
+    .projects>h1{
+        font-size: 1.5rem;
+    }
+    .project_container{
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .project_container>div>h2{
+        font-size: 1.4rem;
+    }
+    .project_container>div>p{
+        font-size: 0.8rem;
+    }
+    .skills>h1{
+        font-size: 1.5rem;
+    }
+    .skill_cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .card{
+        flex-direction: column;
+    }
+    .skill_cards>.card>h3{
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+    .footer>h2{
+        font-size: 1.5rem;
+        padding: 50px 0px 0 50px;
+    }
+    .links>div>svg{
+        height: 30px;
+        width: 30px;
+    }
+    .links{
+        padding: 40px 0 0 40px;
+    }
+    .footer_content>img{
+        width: 50%;
+        padding-right: 20px;
+    }
 }
