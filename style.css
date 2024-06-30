@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    color: white;
+    background-color: rgb(46, 44, 44);
+}
+
+.home{
+    background-image: linear-gradient(60deg, rgb(46, 44, 44) 60%, rgb(53, 115, 231) 30%, rgb(21, 169, 214) 72%);
+}
+
+.nav_container{
+    background-color: rgb(15, 55, 117);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    padding: 10px;
+    font-size: 2.1vw; 
+}
+
+.nav_links {
+    display: flex;
+    list-style: none;
+}
+
+.nav_links>li {
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.5vw;
+}
+
+.intro{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 60px;
+    padding: 30px 0;
+}
+
+.intro_container{
+    margin-left: 40px;
+}
+
+.intro_container>h2{
+    font-size: 2.5vw;
+    font-weight: 300;
+    padding: 10px;
+} 
+
+.intro_container> h1{
+    font-size: 3.5vw;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.name, .profession{
+    color: rgb(0, 195, 255);
+}
+
+.intro_container>p{
+    width: 80%;
+    text-align: left;
+    margin-top: 20px;
+    font-size: 1.3vw;
+    line-height: 30px;
+}
+
+.img_container > img{
+    width: 95%;
+}
+
+.projects{
+    background-color: white;
+    color: black;
+}
+
+.projects> h1{
+    font-size: 3vw;
+    text-align: center;
+    padding: 55px 10px 0 10px;
+}
+
+.project_container{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    padding: 50px 50px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project_container>div{
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.project_container>div>h2{
+    padding: 30px 20px;
+    font-weight: 300;
+}
+
+.project_container>div>img{
+    height: 50%;
+    width: 100%;
+    padding: 15px 20px 0 20px;
+
+}
+
+.project_container>div>p{
+    padding: 0 20px;
+}
+
+.skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills>h1{
+    font-size: 3vw;
+    text-align: center;
+    padding: 100px 10px 0 10px;
+}
+
+.skill_cards{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    width: 70%;
+    margin: 100px 0;
+}
+
+.footer{
+    background-image: linear-gradient(to right, rgb(42 79 129) 30%, rgb(42 79 131) 50%, rgb(96, 167, 255) 100%);
+}
+
+.footer>h2{
+    font-size: 3vw;
+    padding: 100px 0 0 85px;
+}
+
+.footer_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+.footer_content>img{
+    width: 38%;
+    padding: 0px 100px 0 0;
+}
