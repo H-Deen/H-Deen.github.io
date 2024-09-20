@@ -1,3 +1,15 @@
+/* Base styles */
+:root {
+    --primary-bg: rgb(46, 44, 44);
+    --secondary-bg: rgb(53, 115, 231);
+    --accent-bg: rgb(21, 169, 214);
+    --nav-bg: rgb(15, 55, 117);
+    --text-color: white;
+    --project-bg: aliceblue;
+    --card-bg: rgb(56, 53, 53);
+    --icon-hover-color: #00c3ff;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -6,33 +18,38 @@
 }
 
 body {
-    height: 100vh;
-    width: 100%;
-    color: white;
-    background-color: rgb(46, 44, 44);
+    color: var(--text-color);
+    background-color: var(--primary-bg);
 }
 
-.home{
-    background-image: linear-gradient(60deg, rgb(46, 44, 44) 60%, rgb(53, 115, 231) 30%, rgb(21, 169, 214) 72%);
+/* Layout */
+.home {
+    background-image: linear-gradient(60deg, var(--primary-bg) 60%, var(--secondary-bg) 30%, var(--accent-bg) 72%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.nav_container{
-    background-color: rgb(15, 55, 117);
+.nav_container {
+    background-color: var(--nav-bg);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 5%;
+    height: 60px;
 }
 
-.logo{
+.logo {
     padding: 10px;
-    font-size: 2rem; 
+    font-size: clamp(1.4rem, 4vw, 2rem);
 }
 
 .nav_links {
@@ -40,84 +57,116 @@ body {
     list-style: none;
 }
 
-.nav_links>li {
+.nav_links > li {
     padding: 10px;
-    margin: 10px;
-    font-size: 1.2rem;
+    margin: 0 10px;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
 }
 
-.intro{
-    display: flex;
+.nav_links > li > a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav_links > li > a:hover {
+    color: var(--accent-bg);
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
-    padding: 30px 0;
+    cursor: pointer;
+    padding: 10px;
+    height: 100%;
 }
 
-.intro_heading{
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 2px 0;
+    transition: 0.4s;
+}
+
+/* Introduction section */
+.intro {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 60px 5% 30px; /* Reduced top padding */
+}
+
+.intro_heading {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 300px;
-    margin-top: 50px;
+    margin-bottom: 20px; /* Added margin-bottom */
 }
 
-.intro_container{
-    margin-left: 40px;
-    width: 150%;
+.intro_container {
+    flex: 1;
+    max-width: 60%;
 }
 
-.intro_container>h2{
-    font-size: 2rem;
+.intro_container > h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
     font-weight: 300;
-    padding: 10px;
-} 
-
-.intro_container> h1{
-    font-size: 3.5rem;
-    font-weight: 600;
-    padding: 10px;
+    padding: 5px 0; /* Reduced padding */
 }
 
-.name, .profession{
+.intro_container > h1 {
+    font-size: clamp(1.5rem, 5vw, 3.5rem);
+    font-weight: 600;
+    padding: 5px 0; /* Reduced padding */
+}
+
+.name, .profession {
     color: rgb(0, 195, 255);
 }
 
-.intro_para{
-    margin-bottom: 75px;
+.intro_para {
+    margin-top: 10px; /* Reduced margin-top */
 }
 
-.intro_para>p{
-    width: 50%;
-    text-align: left;
-    font-size: 1rem;
-    line-height: 30px;
-    padding-left: 45px;
+.intro_para > p {
+    width: 100%;
+    max-width: 600px;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    line-height: 1.6;
 }
 
-.img_container{
-    width: 150%;
+.img_container {
+    flex: 1;
+    max-width: 40%;
+    text-align: center;
 }
 
-.img_container > img{
-    width: 90%;
-    margin-top: 80px;
+.img_container > img {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
 }
 
-.projects{
+/* Projects section */
+.projects {
     background-color: white;
     color: black;
+    padding: 50px 5%;
 }
 
-.projects> h1{
-    font-size: 2.7rem;
+.projects > h1 {
+    font-size: clamp(1.5rem, 4vw, 2.7rem);
     text-align: center;
     padding: 55px 10px 0 10px;
 }
 
-.project_container{
+.project_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 50px 50px;
@@ -125,40 +174,73 @@ body {
     gap: 20px;
 }
 
-.project_container>div{
-    background-color: aliceblue;
+.project_container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures view-box stays at the bottom */
+    background-color: var(--project-bg);
     border-radius: 10px;
+    box-shadow: 3px 1px 5px 2px rgba(135, 135, 135, 0.4);
+    height: 100%;
 }
 
-.project_container>div>h2{
+.project_container > div > h2 {
     padding: 30px 20px;
     font-weight: 300;
 }
 
-.project_container>div>img{
+.project_container > div > img {
     height: 50%;
     width: 100%;
     padding: 15px 20px 0 20px;
-
+    object-fit: cover;
 }
 
-.project_container>div>p{
+.project_container > div > p {
+    flex-grow: 1; /* This allows the paragraph to take up remaining space */
     padding: 0 20px;
 }
 
-.skills{
+.view-box {
+    background-color: #c7c7c7;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-shrink: 0; /* Prevents the view-box from shrinking */
+    transition: padding 0.3s ease;
+}
+
+.view-box > a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.view-box > a:hover{
+    color: rgb(94, 154, 207);
+    transform: scale(1.2);
+}
+
+/* Skills section */
+.skills {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.skills>h1{
-    font-size: 2.7rem;
+.skills > h1 {
+    font-size: clamp(1.5rem, 4vw, 2.7rem);
     text-align: center;
     padding: 100px 10px 0 10px;
 }
 
-.skill_cards{
+.skill_cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
@@ -169,145 +251,223 @@ body {
     margin: 100px 0;
 }
 
-.card{
-    background-color: rgb(56, 53, 53);
+.card {
+    background-color: var(--card-bg);
     border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 2px 5px 0px rgb(76 75 75);
 }
 
-.card>h3{
+.card > h3 {
     padding-left: 20px;
 }
 
-.footer{
+/* Footer */
+.footer {
     background-image: linear-gradient(to right, rgb(42 79 129) 30%, rgb(42 79 131) 50%, rgb(96, 167, 255) 100%);
+    padding: 50px 5%;
 }
 
-.footer>h2{
-    font-size: 2.7rem;
-    padding: 100px 0 0 85px;
+.footer > h2 {
+    font-size: clamp(1.5rem, 4vw, 2.7rem);
+    margin-bottom: 30px;
 }
 
-.footer_content{
+.footer_content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-.links{
+.links {
     display: flex;
     align-items: center;
-    width: 50%;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    gap: 55px;
 }
 
-.footer_content>img{
-    width: 38%;
-    padding: 0px 100px 0 0;
+.links > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media only screen and (max-width: 1100px){
-    .home{
-        background-image: linear-gradient(70deg, rgb(46, 44, 44) 66%, rgb(53, 115, 231) 20%, rgb(21, 169, 214) 72%);
+.links > div > svg {
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.links > div > svg:hover {
+    transform: scale(1.2);
+    fill: var(--icon-hover-color);
+}
+
+.footer_content > img {
+    max-width: 300px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1100px) {
+    .home {
+        background-image: linear-gradient(70deg, var(--primary-bg) 66%, var(--secondary-bg) 20%, var(--accent-bg) 72%);
     }
-    .intro_para{
-       margin-top: 40px;
+    .intro_para {
+       margin-top: 20px; /* Reduced margin-top */
     }
-    .intro_para>p{
-        margin-top: 20px;
-    }
-    .project_container{
+    .project_container {
         grid-template-columns: repeat(2, 1fr);
     }
-    .project_container>div>h2{
+    .project_container > div > h2 {
         padding: 30px 0 10px 23px;
     }
-    .card>h3{
+    .view-box {
+        padding: 8px;
+    }
+    .card > h3 {
         padding: 0 10px 0 10px;
     }
-    .footer>h2{
-        padding-left: 35px;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav_links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: var(--nav-bg);
+    }
+
+    .nav_links.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro_heading {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+    .intro_container, .img_container {
+        max-width: 100%;
+    }
+    .project_container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .view-box {
+        padding: 6px;
+        flex-direction: column;
+    }
+    .skill_cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer_content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .links {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footer_content > img {
+        margin-top: 30px;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    .home{
-        background-image: linear-gradient(70deg, rgb(46, 44, 44) 70%, rgb(53, 115, 231) 20%, rgb(21, 169, 214) 72%);
+    .home {
+        background-image: linear-gradient(70deg, var(--primary-bg) 70%, var(--secondary-bg) 20%, var(--accent-bg) 72%);
     }
-    .logo{
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nav_links {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav_links > li {
+        margin: 5px 0;
+    }
+    .intro_container > h2 {
         font-size: 1.4rem;
     }
-    .nav_links>li{
-        font-size: 0.8rem;
-        margin: 0;
-    }
-    .intro{
-        margin-top: 0;
-    }
-    .intro_heading{
-        margin: 0;
-        padding: 0;
-    }
-    .intro_container>h2{
-        font-size: 1.4rem;
-    }
-    .intro_container>h1{
+    .intro_container > h1 {
         font-size: 1.5rem;
         padding: 5px;
     }
-    .img_container>img{
+    .img_container > img {
         width: 250px;
     }
-    .intro_para{
-        margin: 0;
-    }
-    .intro_para>p{
+    .intro_para > p {
         font-size: 0.8rem;
         line-height: 1.2rem;
         text-align: center;
         width: 90%;
     }
-    .projects>h1{
+    .projects > h1 {
         font-size: 1.5rem;
     }
-    .project_container{
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-    .project_container>div>h2{
+    .project_container > div > h2 {
         font-size: 1.4rem;
     }
-    .project_container>div>p{
+    .project_container > div > p {
         font-size: 0.8rem;
     }
-    .skills>h1{
+    .view-box {
+        padding: 5px;
+    }
+    .view-box > a {
+        font-size: 0.8rem; /* Smaller font for mobile */
+    }
+    .skills > h1 {
         font-size: 1.5rem;
     }
-    .skill_cards{
-        grid-template-columns: repeat(2, 1fr);
+    .skill_cards {
+        grid-template-columns: 1fr;
     }
-    .card{
+    .card {
         flex-direction: column;
     }
-    .skill_cards>.card>h3{
+    .skill_cards > .card > h3 {
         font-size: 1rem;
         padding: 10px 0;
     }
-    .footer>h2{
-        font-size: 1.5rem;
-        padding: 50px 0px 0 50px;
+    .links {
+        padding: 20px 0 0 0;
+        gap: 40px;
     }
-    .links>div>svg{
-        height: 30px;
-        width: 30px;
+    .links > div > svg {
+        height: 24px;
+        width: 24px;
     }
-    .links{
-        padding: 40px 0 0 40px;
+
+    .links > div > svg:hover {
+        transform: scale(1.1);
     }
-    .footer_content>img{
-        width: 50%;
-        padding-right: 20px;
+    .footer_content > img {
+        width: 100%;
+        padding-right: 0;
     }
 }

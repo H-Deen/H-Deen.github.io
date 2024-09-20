@@ -45,7 +45,7 @@ longestWord.textContent = ` -`
 
 text.addEventListener('input', function(){
     let input = text.value
-    let wordArray =  input.split(' ').filter(word => word.trim() !== '')
+    let wordArray =  input.split(/[\s.]+/).filter(word => word.trim() !== '')
     words.textContent = wordArray.length
 
     let characterArray = input.split('')

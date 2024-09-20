@@ -7,7 +7,7 @@ const hour = minute * 60;
 const day = hour * 24;
 
 const countdown = setInterval(function(){
-    const target = new Date(2024, 6, 14, 0, 0, 0).getTime()
+    const target = new Date(2025, 6, 14, 0, 0, 0).getTime()
     const currentDate = new Date().getTime()
     const diff = target - currentDate
     const days = Math.floor(diff/day)

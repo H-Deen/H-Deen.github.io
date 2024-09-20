@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url(/Portfolio/assets/images/fonts/Nunito/Nunito-VariableFont_wght.ttf);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+#container {
+    background-color: rgb(92, 174, 221);
+    height: auto;
+    width: 50%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#question {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.inputContainer {
+    background-color: white;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.inputContainer input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.3); /* Make radio button slightly larger */
+}
+
+.inputContainer label {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    user-select: none;
+}
+
+.inputContainer label[style*="background-color"] {
+    color: white;
+}
+
+#submit {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: #45a049;
+}

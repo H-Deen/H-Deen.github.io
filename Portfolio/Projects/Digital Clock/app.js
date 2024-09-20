@@ -15,7 +15,7 @@ function updateDate() {
     let date = dateAndmonth.getDate()
     let monthName = months[dateAndmonth.getMonth()]
     let day = weekdays[dateAndmonth.getDay()]
-    return `${date}, ${monthName}, ${day}`
+    return `${date} ${monthName}, ${day}`
 }
 
 setInterval(function () {

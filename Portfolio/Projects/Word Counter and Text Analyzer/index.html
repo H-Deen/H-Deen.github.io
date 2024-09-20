@@ -1,27 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/Word Counter and Text Analyzer/style.css">
+    <title>Text Analyzer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/Portfolio/Projects/Word Counter and Text Analyzer/style.css">
 </head>
+
 <body>
-    <h1>Text Analyzer</h1>
-    <div id="words"></div>
-    <div id="characters"></div>
-    <div id="sentences"></div>
-    <div id="paragraphs"></div>
-    <div id="pronouns"></div>
-    <textarea name="text" id="text" cols="30" rows="10" placeholder="Paste/Write some text"></textarea>
-    <div>
-        Average Reading Time:
-        <span id="avrReadingTime"></span>
-    </div>
-    <div>
-        Longest Word:
-        <span id="longestWord"></span>
-    </div>
-    <script src="/Word Counter and Text Analyzer/app.js"></script>
+    <main>
+        <h1>Text Analyzer</h1>
+        <div class="counts_container">
+            <div class="counts">
+                <h2>Words</h2>
+                <div id="words"></div>
+            </div>
+            <div class="counts">
+                <h2>Characters</h2>
+                <div id="characters"></div>
+            </div>
+            <div class="counts">
+                <h2>Sentences</h2>
+                <div id="sentences"></div>
+            </div>
+            <div class="counts">
+                <h2>Paragraphs</h2>
+                <div id="paragraphs"></div>
+            </div>
+            <div class="counts">
+                <h2>Pronouns</h2>
+                <div id="pronouns"></div>
+            </div>
+        </div>
+        <textarea name="text" id="text" rows="20" cols="50" placeholder="Paste/Write some text"></textarea>
+        <div class="app_footer">
+            <div class="app_footerContent">
+                <h2>Average Reading Time:</h2>
+                <span id="avrReadingTime"></span>
+            </div>
+            <div class="app_footerContent">
+                <h2>Longest Word:</h2>
+                <span id="longestWord"></span>
+            </div>
+        </div>
+    </main>
+    <script src="/Portfolio/Projects/Word Counter and Text Analyzer/app.js"></script>
 </body>
+
 </html>

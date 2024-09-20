@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/Lucky Draw/style.css">
+    <title>Name Picker</title>
+    <link rel="stylesheet" href="/Portfolio/Projects/Lucky Draw/style.css">
 </head>
 <body>
     <h1>Lucky Draw</h1>
-    <div class="container">
-        <textarea name="names" id="names"></textarea>
-        <button type="submit" id="save">Save</button>
+    <div class="main-container">
+        <!-- Roller on the left -->
+        <div id="roller-container">
+            <div id="roller">
+                <div class="roll-input" id="rolling-name">---</div> <!-- Rolling container -->
+                <ul id="ul"></ul> <!-- Static list of names -->
+            </div>
+            <div id="winner"></div> <!-- Winner below the roller -->
+        </div>
+
+        <!-- Textarea for names on the right -->
+        <div class="container">
+            <textarea name="names" id="names"></textarea>
+            <button type="submit" id="save">Save</button>
+        </div>
     </div>
-    <div id="roller">
-        <ul id="ul"></ul>
-    </div>
-    <div id="winner"></div>
-    <script src="/Lucky Draw/app.js"></script>
+    <script src="/Portfolio/Projects/Lucky Draw/app.js"></script>
 </body>
 </html>
